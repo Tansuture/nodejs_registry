@@ -3,9 +3,9 @@ import React from "react";
 const SearchResult = ({ results }) => {
   return (
     <div>
-      {results?.map((el) => (
+      {results?.map((el,index) => (
         <div
-         
+         key={`key-${index}`}
           className="border border-slate-400 rounded-lg mb-4 p-4"
         >
           <h2 className="text-xl font-bold mb-2">Price Paid:{el.pricePaid}</h2>
