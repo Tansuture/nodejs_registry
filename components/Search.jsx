@@ -8,13 +8,12 @@ function SearchForm({ onSearch }) {
     locality: "",
     postcode: "",
     propertyType: [],
-    newBuild: "",
+    newBuild: false,
     estateType: "",
     transactionCategory: "",
     min_price: "",
     max_price: "",
-    earliestDate: "",
-    latestDate: "",
+    transactionDate: "",
   });
 
   const handleChange = (e) => {
@@ -103,8 +102,8 @@ function SearchForm({ onSearch }) {
             <input
               type="radio"
               name="newBuild"
-              value="new-build"
-              checked={searchParams.newBuild === "new-build"}
+              value="true"
+              checked={searchParams.newBuild}
               onChange={handleChange}
               className="mr-2"
             />
@@ -114,8 +113,8 @@ function SearchForm({ onSearch }) {
             <input
               type="radio"
               name="newBuild"
-              value="not new-build"
-              checked={searchParams.newBuild === "not new-build"}
+              value="false"
+              checked={searchParams.newBuild === false}
               onChange={handleChange}
               className="mr-2"
             />
@@ -186,25 +185,12 @@ function SearchForm({ onSearch }) {
 
       <div className="flex justify-between items-center">
         <label className="block text-sm font-medium text-gray-700 w-1/3">
-          Earliest Date:
+          Transaction Date:
         </label>
         <input
           type="date"
-          name="earliestDate"
-          value={searchParams.earliestDate}
-          className="mt-1 block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className="flex justify-between items-center">
-        <label className="block text-sm font-medium text-gray-700 w-1/3">
-          Latest Date:
-        </label>
-        <input
-          type="date"
-          name="latestDate"
-          value={searchParams.latestDate}
+          name="transactionDate"
+          value={searchParams.transactionDate}
           className="mt-1 block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           onChange={handleChange}
         />
