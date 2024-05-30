@@ -11,7 +11,7 @@ export default function Home() {
   const handleSearch = async (searchParams) => {
     const queryString = new URLSearchParams(searchParams).toString();
     const response = await fetch(
-      `http://54.226.245.83:80/api/properties?${queryString}`
+      `http://localhost:3002/api/properties?${queryString}`
     );
     const data = await response.json();
     setResults(data);
